@@ -9,18 +9,25 @@ nav {
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     min-height: 8vh;
-    background-color: crimson;
+    background-color: black;
     font-family: "Poppins", sans-serif;
 }
 
 .logo {
+    margin-right: auto;
+    margin-left: 1rem;
+    display: flex;
     color: rgb(226, 226, 226);
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 20px;
+}
+
+.logo .h4 {
+    color: rgb(0, 255, 234);
 }
 
 .nav-links {
@@ -39,6 +46,28 @@ nav {
     letter-spacing: 3px;
     font-weight: bold;
     font-size: 14px;
+}
+
+.nav-links .login {
+    color: rgb(0, 255, 234);
+}
+
+.nav-links .register {
+    color: rgb(0, 255, 234);
+}
+
+.nav-links li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+    color: rgb(0, 255, 234);
+}
+
+nav ul li a.login:hover,
+nav ul li a.register:hover {
+    color: rgb(226, 226, 226);
 }
 
 .burger {
@@ -63,7 +92,7 @@ nav {
         right: 0px;
         height: 30vh;
         top: 8vh;
-        background-color: crimson;
+        background-color: black;
         display: flex;
         flex-direction: column;
         align-items: center;

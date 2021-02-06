@@ -72,6 +72,7 @@ nav ul li a.register:hover {
 
 .burger {
     display: none;
+    margin-right: 1rem;
 }
 
 .burger div {

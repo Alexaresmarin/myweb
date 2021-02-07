@@ -5,7 +5,7 @@
 }
 
 nav {
-    position: abs;
+    position: fixed;
     top: 0;
     width: 100%;
     display: flex;
@@ -82,13 +82,12 @@ nav ul li a.login:hover {
 @media screen and (max-width: 1024px) {
     body {
         overflow-x: hidden;
-        overflow-y: visible;
     }
     
     .nav-links {
         position: fixed;
         right: 0px;
-        height: 92vh;
+        height: 30vh;
         top: 8vh;
         background-color: black;
         display: flex;

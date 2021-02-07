@@ -16,6 +16,14 @@ header nav {
     font-family: "Poppins", sans-serif;
 }
 
+main {
+    display: inline-block;
+    position: relative;
+    float: 0;
+    top: 8vh;
+    height: 100%;
+    width: 100%;
+}
 
 .logo {
     margin-right: auto;
@@ -97,7 +105,7 @@ nav ul li a.login:hover {
         right: 0px;
         top: 8vh;
         bottom: 0px;
-        background-image: linear-gradient(black, rgb(0, 255, 234));
+        background-image: linear-gradient(black, crimson);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -109,8 +117,15 @@ nav ul li a.login:hover {
     .nav-links .login {
         color: black;
     }
+
+    nav ul li a.contact:hover {
+        color: black;
+    }  
     
-    
+    nav ul li a.login:hover {
+        color: rgb(226, 226, 226);
+    }
+
     .nav-links li {
         opacity: 0;
     }
@@ -120,8 +135,8 @@ nav ul li a.login:hover {
         cursor: pointer;
     }
 
-    #slider {
-        z-index: -3 ;
+    main {
+        z-index: -5;
     }
 
     #slider .carousel-inner .carousel-item img {
@@ -162,8 +177,7 @@ nav ul li a.login:hover {
 }
 
 #slider {
-    position: fixed;
-    top: 8vh;
+    position: relative;
     width: 100%;
 }
 
@@ -173,4 +187,9 @@ nav ul li a.login:hover {
 
 #slider .carousel-inner .carousel-item img {
     height: 35rem;
+}
+
+#about {
+    width: 100%;
+    text-align: center;
 }

@@ -10,6 +10,11 @@
 
     <link rel="stylesheet" href="css/main.css">
 
+    <!--  BOOTSTRAP  -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
     <!--  JS  -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -38,10 +43,10 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#">About us</a></li>
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a class="login" href="login.html">Login / Sign up</a></li>
+                <li><a class="login" href="login.html">Login</a></li>
             </ul>
 
             <div class="burger">
@@ -52,9 +57,44 @@
         </nav>
     </header>
 
-    <main>
-
-    </main>
+    <!--  SLIDER  -->
+    <div id="slider">
+        <div id="headerSlider" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#headerSlider" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#headerSlider" data-bs-slide-to="1"></li>
+                <li data-bs-target="#headerSlider" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/banner1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h5>how to fight</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/banner2.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h5>how to play like Rafa</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/banner3.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h5>how to ser curry</h5>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#headerSlider" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#headerSlider" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+    </div>
 
 
 
@@ -79,6 +119,9 @@
 
     <!--  SCRIPTS  -->
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
     <script src="https://kit.fontawesome.com/2b95d97fe8.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 

@@ -87,7 +87,7 @@ nav ul li a.login:hover {
     .nav-links {
         position: fixed;
         right: 0px;
-        height: 30vh;
+        height: 120vh;
         top: 8vh;
         background-color: black;
         display: flex;

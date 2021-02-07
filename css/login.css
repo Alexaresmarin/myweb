@@ -22,7 +22,7 @@ nav {
     align-items: center;
     min-height: 8vh;
     background-color: black;
-    border-bottom: 0.2rem solid rgb(0, 255, 234);
+    border-bottom: 0.2rem solid crimson;
 }
 
 .logo {
@@ -36,7 +36,7 @@ nav {
 }
 
 .logo .h4 {
-    color: rgb(0, 255, 234);
+    color: crimson;
 }
 
 .nav-links {
@@ -64,7 +64,7 @@ nav ul li a:before {
   transition: all .5s;
 }
 nav ul li a:hover {
-    color: rgb(0, 255, 234);
+    color: crimson;
 }
 
 @media screen and (max-width: 1024px) {
@@ -88,7 +88,7 @@ nav ul li a:hover {
     margin: 1rem;
     padding: 2rem;
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.2);
-    border: rgb(0, 255, 234);
+    border: crimson;
     border-radius: 0.25rem;
     background: rgb(255, 255, 255);
     color: black;
@@ -137,7 +137,7 @@ nav ul li a:hover {
 }
 
 .form__input:focus {
-    border-color: rgb(0, 255, 234);
+    border-color: crimson;
     background: white;
 }
 
@@ -162,7 +162,7 @@ nav ul li a:hover {
     border-radius: 0.25rem;
     outline: none;
     cursor: pointer;
-    background: rgb(0, 255, 234);
+    background: crimson;
 }
 
 .form__button:hover {

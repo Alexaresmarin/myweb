@@ -16,6 +16,7 @@ header nav {
     font-family: "Poppins", sans-serif;
 }
 
+
 .logo {
     margin-right: auto;
     margin-left: 1rem;
@@ -26,14 +27,18 @@ header nav {
     font-size: 1.25rem;
 }
 
+.logo h4 {
+    margin: 0;
+}
+
 .logo .h4 {
-    color: rgb(0, 255, 234);
+    color: crimson;
 }
 
 .nav-links {
     display: flex;
     justify-content: space-around;
-    width: 30%;
+    width: 40%;
     margin: 0;
 }
 
@@ -50,7 +55,7 @@ header nav {
 }
 
 .nav-links .login {
-    color: rgb(0, 255, 234);
+    color: crimson;
 }
 
 
@@ -60,7 +65,7 @@ nav ul li a:before {
   transition: all .5s;
 }
 nav ul li a:hover {
-    color: rgb(0, 255, 234);
+    color: crimson;
 }
 
 nav ul li a.login:hover {

@@ -63,9 +63,14 @@ img {
 
 @media screen and (max-width: 768px) {
     .sponsors img {
-        max-width: 60%;
+        max-height: 100px;
         margin-bottom: 40px;
     }
+
+    .sponsors .amazon {
+        max-height: 60px;
+    }
+
     .shop img {
         max-width: 40%;
         margin-bottom: 70px;

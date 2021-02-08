@@ -34,5 +34,6 @@ img {
 @media screen and (max-width: 768px) {
     .sponsors img {
         max-width: 50%;
+        height: auto;
     }
 }

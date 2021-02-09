@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="w-100 m-0 p-0">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
 
     <!--  CSS  -->
 
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="./css/login.css">
 
     <!--  JS  -->
 
@@ -22,61 +22,59 @@
 
     <!--  FONTS  -->
 
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 
-    <title>Login / Sign up</title>
+    <title>Sign up</title>
 </head>
 
 <body>
 
     <!--  NAVBAR  -->
 
-    <nav>
-        <div class="logo">
-            <h4>sport</h4><h4 class="h4">shop</h4>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-        </ul>
-    </nav>
+    <header>
+        <img class="logo" src="./img/logo.png" alt="SPORTS">
+        <a class="home" href="./index.html">Home</a>
+    </header>
+
+    <!--  FORM  -->
 
     <div class="container">
-        <form class="form" id="login">
-            <h1 class="form__title">Login</h1>
-            <div class="form__message form__message--error"></div>
-            <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="Username">
-                <div class="form__input-error-message"></div>
+        <div class="header">
+            <h2>Create Account</h2>
+        </div>
+        <form id="form" class="form">
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input type="text" placeholder="username" id="username" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
             </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="*******">
-                <div class="form__input-error-message"></div>
+            <div class="form-control">
+                <label for="username">Email</label>
+                <input type="email" placeholder="email@gmail.com" id="email" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
             </div>
-            <button class="form__button" type="submit">Continue</button>
+            <div class="form-control">
+                <label for="username">Password</label>
+                <input type="password" placeholder="********" id="password" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="username">Password check</label>
+                <input type="password" placeholder="********" id="password2" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <button>Submit</button>
         </form>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!--  SCRIPTS  -->
 

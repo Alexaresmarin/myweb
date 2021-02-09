@@ -1,28 +1,90 @@
-function setFormMessage(formElement, type, message) {
-    const messageElement = formElement.querySelector(".form__message");
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
 
-    messageElement.textContent = message;
-    messageElement.classList.remove("form__message--success", "form__message--error");
-    messageElement.classList.add(`form__message--${type}`);
-}
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-function setInputError(inputElement, message) {
-    inputElement.classList.add("form__input--error");
-    inputElement.parentElement.querySelector(".form__input-error-message").textContent = message;
-}
-
-function clearInputError(inputElement) {
-    inputElement.classList.remove("form__input--error");
-    inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    const loginForm = document.querySelector("#login")
-
-    loginForm.addEventListener("submit", e => {
-        e.preventDefault();
-
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
-    });
-
+    checkInputs();
 });
+
+function checkInputs() {
+    // get the values
+    const usernameValue = username.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+    const password2Value = password2.value.trim();
+    var cond = 1;
+
+    if(usernameValue === '') {
+        setErrorFor(username, 'Username cannot be blank');
+        cond = 0;
+    }
+    else {
+        setSuccessFor(username);
+    }
+
+    if(emailValue === '') {
+		setErrorFor(email, 'Email cannot be blank');
+        cond = 0;
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'Not a valid email'); 
+        cond = 0;
+	} else {
+		setSuccessFor(email);
+	}
+
+    if(passwordValue === '') {
+        setErrorFor(password, 'Password cannot be blank');
+        cond = 0;
+    }
+    else {
+        setSuccessFor(password);
+    }
+
+    if(passwordValue === '') {
+		setErrorFor(password, 'Password cannot be blank');
+        cond = 0;
+	} else {
+		setSuccessFor(password);
+	}
+	
+	if(password2Value === '') {
+		setErrorFor(password2, 'Password cannot be blank');
+        cond = 0;
+	} else if(passwordValue !== password2Value) {
+		setErrorFor(password2, 'Passwords does not match');
+        cond = 0;
+	} else{
+		setSuccessFor(password2);
+	}
+
+    if (cond === 1) {
+        axios.post('https://jsonserver-alexares.herokuapp.com/users', {
+            user: usernameValue,
+            email: emailValue,
+            password: passwordValue
+        })
+    }
+}
+
+function setErrorFor(input, message) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small');
+
+    small.innerText = message;
+
+    formControl.className = 'form-control error';
+}
+
+function setSuccessFor(input) {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
+}
+
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+

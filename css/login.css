@@ -1,188 +1,130 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+	box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
+	background: rgb(0,97,242);
+    background: linear-gradient(180deg, rgba(0,97,242,1) 0%, rgba(105,0,199,1) 100%);
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
 }
 
-nav {
-    position: fixed;
-    top: 0;
+header {
+    height: 60px;
     width: 100%;
+    top: 0;
+    position: fixed;
+	background-color: #f7f7f7;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    min-height: 8vh;
-    background-color: black;
-    border-bottom: 0.2rem solid crimson;
+    padding: 0px 10px;
 }
 
 .logo {
-    margin-right: auto;
-    margin-left: 1rem;
-    display: flex;
-    color: rgb(226, 226, 226);
-    text-transform: uppercase;
-    letter-spacing: 0.3125rem;
-    font-size: 1.25rem;
+    max-width: 91.35px;
+    height: 30.37px;
 }
 
-.logo .h4 {
-    color: crimson;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 1rem;
-    width: 30%;
-}
-
-.nav-links li {
-    list-style: none;
-}
-
-.nav-links a {
-    color: rgb(226, 226, 226);
+.home {
     text-decoration: none;
-    letter-spacing: 0.1875rem;
     font-weight: bold;
-    font-size: 0.875rem;
-}
-
-.nav-links li a,
-nav ul li a:after,
-nav ul li a:before {
-  transition: all .5s;
-}
-nav ul li a:hover {
-    color: crimson;
-}
-
-@media screen and (max-width: 1024px) {
-    body {
-        overflow-x: hidden;
-    }
-
-    .container {
-        position: relative;
-    }
-}
-
-.form--hidden {
-    display: none;
+    color: black;
 }
 
 .container {
-    font-size: 1.1rem;
-    width: 33rem;
-    max-width: 33rem;
-    margin: 1rem;
-    padding: 2rem;
-    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.2);
-    border: crimson;
-    border-radius: 0.25rem;
-    background: rgb(255, 255, 255);
-    color: black;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	width: 400px;
+	max-width: 100%;
 }
 
-.form > *:first-child {
-    margin-top: 0;
+.header {
+	border-bottom: 1px solid #f0f0f0;
+	background-color: #f7f7f7;
+	padding: 20px 40px;
 }
 
-.form > *:last-child {
-    margin-bottom: 0;
+.header h2 {
+	margin: 0;
 }
 
-.form__title {
-    margin-bottom: 2rem;
-    text-align: center;
+.form {
+	padding: 30px 40px;	
 }
 
-.form__message {
-    text-align: center;
-    margin-bottom: 1rem;
+.form-control {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
 }
 
-.form__message--success {
-    color: rgb(0, 151, 0);
+.form-control label {
+	display: inline-block;
+	margin-bottom: 5px;
 }
-
-.form__message--error {
-    color: rgb(168, 0, 0);
-}
-
-.form__input-group {
-    margin-bottom: 1rem;
-}
-
-.form__input {
+.form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
     display: block;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
     width: 100%;
-    padding: 0.75rem;
-    box-sizing: border-box;
-    border-radius: 0.25rem;
-    border: 0.0625rem solid #dddddd;
-    outline: none;
-    background: #eeeeee;
-    transition: background 0.2s, border-color 0.2s;
 }
 
-.form__input:focus {
-    border-color: crimson;
-    background: white;
+.form-control.success input {
+    border-color: green
 }
 
-.form__input--error {
-    color: rgb(168, 0, 0);
-    border-color: rgb(168, 0, 0);
+.form-control.error input {
+    border-color: crimson
 }
 
-.form__input-error-message {
-    margin-top: 0.5rem;
-    font-size: 0.85rem;
-    color: rgb(168, 0, 0)
+.form-control.success i.fa-check-circle {
+    visibility: visible;
+    color: green;
 }
 
-.form__button {
+.form-control.error i.fa-exclamation-circle {
+    visibility: visible;
+    color: crimson;
+}
+
+.form-control.error small {
+    visibility: visible;
+    color: crimson;
+}
+
+.form-control i {
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.form-control small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.form button {
+    background: rgb(0,97,242);
+    background: linear-gradient(135deg, rgba(0,97,242,1) 0%, rgba(105,0,199,1) 100%);
+    border: 2px solid rgb(0,97,242);
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
     width: 100%;
-    padding: 1rem 2rem;
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: black;
-    border: none;
-    border-radius: 0.25rem;
-    outline: none;
-    cursor: pointer;
-    background: crimson;
-}
-
-.form__button:hover {
-    background: rgb(226, 226, 226);
-}
-
-.form__button:active {
-    transform: scale(0.98);
-}
-
-.form__text {
-    text-align: center;
-}
-
-.form__link {
-    text-decoration: none;
-    color: rgb(58, 58, 58);
-    cursor: pointer;
-}
-
-.form__link:hover {
-    text-decoration: underline;
 }

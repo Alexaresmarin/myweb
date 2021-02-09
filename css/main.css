@@ -61,6 +61,14 @@ img {
     color: white;
 }
 
+.name {
+    font-weight: bold;
+}
+
+.motivacion {
+    font-size: 1.25rem;
+}
+
 @media screen and (max-width: 768px) {
     .sponsors img {
         max-height: 100px;
@@ -68,7 +76,7 @@ img {
     }
 
     .sponsors .amazon {
-        max-height: 60px;
+        max-height: 50px;
     }
 
     .shop img {

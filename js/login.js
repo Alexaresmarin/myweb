@@ -69,6 +69,7 @@ function checkInputs() {
             password: passwordValue
         })
         alert('your account has been registered successfully');
+
     }
 }
 

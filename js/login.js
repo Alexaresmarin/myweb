@@ -18,64 +18,51 @@ function checkInputs() {
     const password2Value = password2.value.trim();
     var cond = 1;
 
-    if(usernameValue === '') {
+    
+
+    if (usernameValue === '') {
         setErrorFor(username, 'Username cannot be blank');
         cond = 0;
-    }
-    else {
-        axios.get(`https://jsonserver-alexares.herokuapp.com/users?user=${usernameValue}`)
-        .then(({data}) => {
-            if (usernameValue === data[0].user) {
-                setErrorFor(username, 'This username already exists');
-                cond = 0;
-            }
-            else setSuccessFor(username);
-        })
+    } else {
+        setSuccessFor(username);
     }
 
-    if(emailValue === '') {
-		setErrorFor(email, 'Email cannot be blank');
+    if (emailValue === '') {
+        setErrorFor(email, 'Email cannot be blank');
         cond = 0;
-	} else if (!isEmail(emailValue)) {
-		setErrorFor(email, 'Not a valid email'); 
+    } else if (!isEmail(emailValue)) {
+        setErrorFor(email, 'Not a valid email');
         cond = 0;
-	} else {
-		axios.get(`https://jsonserver-alexares.herokuapp.com/users?email=${emailValue}`)
-        .then(({data}) => {
-            if (emailValue === data[0].email) {
-                setErrorFor(email, 'This email already exists');
-                cond = 0;
-            }
-            else setSuccessFor(email);
-        })
-	}
+    } else {
+        setSuccessFor(email);
+    }
 
-    if(passwordValue === '') {
+    if (passwordValue === '') {
         setErrorFor(password, 'Password cannot be blank');
         cond = 0;
-    }
-    else {
+    } else {
         setSuccessFor(password);
     }
 
-    if(passwordValue === '') {
-		setErrorFor(password, 'Password cannot be blank');
+    if (passwordValue === '') {
+        setErrorFor(password, 'Password cannot be blank');
         cond = 0;
-	} else {
-		setSuccessFor(password);
-	}
-	
-	if(password2Value === '') {
-		setErrorFor(password2, 'Password cannot be blank');
-        cond = 0;
-	} else if(passwordValue !== password2Value) {
-		setErrorFor(password2, 'Passwords does not match');
-        cond = 0;
-	} else{
-		setSuccessFor(password2);
-	}
+    } else {
+        setSuccessFor(password);
+    }
 
-    if (cond === 1) {
+    if (password2Value === '') {
+        setErrorFor(password2, 'Password cannot be blank');
+        cond = 0;
+    } else if (passwordValue !== password2Value) {
+        setErrorFor(password2, 'Passwords does not match');
+        cond = 0;
+    } else {
+        setSuccessFor(password2);
+    }
+
+    console.log(cond)
+    if (cond == 1) {
         axios.post('https://jsonserver-alexares.herokuapp.com/users', {
             user: usernameValue,
             email: emailValue,
@@ -100,6 +87,5 @@ function setSuccessFor(input) {
 }
 
 function isEmail(email) {
-	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
-

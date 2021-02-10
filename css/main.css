@@ -14,6 +14,10 @@ body {
     height: 30.37px;
 }
 
+.about p {
+    font-size: 24px;
+}
+
 .signup a {
     color: rgb(0,97,242)!important;
 }
@@ -90,6 +94,14 @@ img {
 
     .sponsors .amazon {
         max-height: 50px;
+    }
+
+    .sponsors .nike {
+        max-height: 70px;
+    }
+
+    .sponsors .myprotein {
+        max-height: 70px;
     }
 
     .shop img {

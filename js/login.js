@@ -25,7 +25,10 @@ function checkInputs() {
     else {
         axios.get(`https://jsonserver-alexares.herokuapp.com/users?user=${usernameValue}`)
         .then(({data}) => {
-            if (usernameValue === data[0].user) setErrorFor(username, 'This username already exists')
+            if (usernameValue === data[0].user) {
+                setErrorFor(username, 'This username already exists');
+                cond = 0;
+            }
             else setSuccessFor(username);
         })
     }
@@ -39,7 +42,10 @@ function checkInputs() {
 	} else {
 		axios.get(`https://jsonserver-alexares.herokuapp.com/users?email=${emailValue}`)
         .then(({data}) => {
-            if (emailValue === data[0].email) setErrorFor(email, 'This email already exists')
+            if (emailValue === data[0].email) {
+                setErrorFor(email, 'This email already exists');
+                cond = 0;
+            }
             else setSuccessFor(email);
         })
 	}

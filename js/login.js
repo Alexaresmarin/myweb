@@ -23,7 +23,11 @@ function checkInputs() {
         cond = 0;
     }
     else {
-        setSuccessFor(username);
+        axios.get(`https://jsonserver-alexares.herokuapp.com/users?user=${usernameValue}`)
+        .then(({data}) => {
+            if (usernameValue === data[0].user) setErrorFor(username, 'This username already exists')
+            else setSuccessFor(username);
+        })
     }
 
     if(emailValue === '') {
@@ -33,7 +37,11 @@ function checkInputs() {
 		setErrorFor(email, 'Not a valid email'); 
         cond = 0;
 	} else {
-		setSuccessFor(email);
+		axios.get(`https://jsonserver-alexares.herokuapp.com/users?email=${emailValue}`)
+        .then(({data}) => {
+            if (emailValue === data[0].email) setErrorFor(email, 'This email already exists')
+            else setSuccessFor(email);
+        })
 	}
 
     if(passwordValue === '') {
@@ -67,6 +75,7 @@ function checkInputs() {
             email: emailValue,
             password: passwordValue
         })
+        alert('your account has been registered successfully');
     }
 }
 
